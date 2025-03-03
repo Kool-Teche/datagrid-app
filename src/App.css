@@ -1,6 +1,101 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.header {
+  font-size: 24px;
+  font-weight: 600;
+
+}
+
+.container {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset;
+  border: 1px solid #212121;
+  border-radius: 4px;
+}
+
+.datagrid-download-cta {
+  margin-left: 16px;
+  background: none;
+  border: none;
+  color: #212121;
+  cursor: pointer;
+  font-size: small;
+  font-weight: bold;
+}
+
+.datagrid-download-cta.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.datagrid-download-cta.enabled {
+  opacity: 1;
+}
+
+.datagrid-head-section {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #212121;
+}
+
+.datagrid-table-container {
+  padding: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.datagrid-table-container thead {
+  font-size: small;
+}
+
+.datagrid-table-container td {
+  padding: 4px;
+  font-size: small;
+}
+
+.datagrid-checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  width: 118px;
+}
+
+.datagrid-checkbox {
+  margin-right: 8px;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+}
+
+.datagrid-checkbox:checked {
+  background-color: #212121;
+}
+
+.datagrid-checkbox:checked::after {
+  content: "";
+  color: #212121; 
+  font-size: 12px;
+  position: absolute;
+  left: 2px;
+  top: -1px;
+}
+
+.file-status-container {
+  display: flex;
+  align-items: center;
+}
+
+.green-icon {
+  margin-right: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: greenyellow;
 }

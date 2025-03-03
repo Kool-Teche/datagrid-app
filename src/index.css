@@ -15,8 +15,16 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 16px;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.error-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid red;
+  border-radius: 4px;
 }
