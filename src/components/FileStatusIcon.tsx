@@ -1,9 +1,11 @@
 import { FC } from "react";
 
 interface IFileStatusIcon {
-  isAvailable: boolean;
+  status: "available" | "scheduled";
 }
 
-export const FileStatusIcon: FC<IFileStatusIcon> = ({ isAvailable }) => {
-  return isAvailable ? <div className="green-icon">{null}</div> : null;
+export const FileStatusIcon: FC<IFileStatusIcon> = ({ status }) => {
+  return status === "available" ? (
+    <div className="green-icon">{null}</div>
+  ) : null;
 };

@@ -23,7 +23,9 @@ const Table: FC<TableProps> = ({ data, selectedRows, onSelect }) => {
       <tbody>
         {data.map((row) => {
           // ✅ Memoize onSelect for each row
-          const memoizedOnSelect = useCallback(() => onSelect(row), [row]);
+          const memoizedOnSelect = useCallback(() => {
+            onSelect(row);
+          }, [row]);
 
           return (
             <DataRowComponent

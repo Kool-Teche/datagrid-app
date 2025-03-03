@@ -25,9 +25,11 @@ const SelectAllCheckbox: React.FC<ISelectAllCheckboxProps> = ({
         }}
         onChange={onChange}
       />
-      <span>
-        {selectedCount ? `${selectedCount} Selected` : "None Selected"}
-      </span>
+      <label htmlFor="select-all-checkbox">
+        {selectedCount
+          ? `${selectedCount.toString()} Selected`
+          : "None Selected"}
+      </label>
     </div>
   );
 };

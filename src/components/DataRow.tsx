@@ -6,7 +6,7 @@ import { IDataRow } from "../typings";
 interface IDataRowProps {
   row: IDataRow;
   isSelected: boolean;
-  onSelect: (name: string) => void;
+  onSelect: (row: IDataRow) => void;
 }
 
 const DataRowComponent: FC<IDataRowProps> = memo(
@@ -18,8 +18,14 @@ const DataRowComponent: FC<IDataRowProps> = memo(
           id={`checkbox-${row.name}`} // ✅ Unique ID for accessibility
           className="datagrid-checkbox"
           checked={isSelected}
-          onChange={() => onSelect(row.name)}
+          onChange={() => {
+            onSelect(row);
+          }}
         />
+        <label
+          className="datagrid-checkbox-label"
+          htmlFor={`checkbox-${row.name}`}
+        >{`checkbox-${row.name}`}</label>
       </td>
       <td>{row.name}</td>
       <td>{row.device}</td>
@@ -27,7 +33,7 @@ const DataRowComponent: FC<IDataRowProps> = memo(
       <td className="file-status-container">
         {row.status === "available" && (
           <span>
-            <FileStatusIcon isAvailable={row.status === "available"} />
+            <FileStatusIcon status={row.status} />
           </span>
         )}
         {row.status.charAt(0).toUpperCase() + row.status.slice(1)}

@@ -1,14 +1,16 @@
-import React from "react";
+import { FC, lazy, Suspense } from "react";
 import Header from "./components/Header";
-import DataGrid from "./components/DataGrid";
+const DataGrid = lazy(() => import("./components/DataGrid"));
 
 import "./App.css";
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <>
       <Header />
-      <DataGrid />
+      <Suspense fallback={<div>Loading...</div>}>
+        <DataGrid />
+      </Suspense>
     </>
   );
 };
